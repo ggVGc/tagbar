@@ -2010,7 +2010,7 @@ function! s:JumpToTag(stay_in_tagbar) abort
 
     " Center the tag in the window and jump to the correct column if
     " available, otherwise try to find it in the line
-    normal! z.
+    normal! zt
     if taginfo.fields.column > 0
         call cursor(taginfo.fields.line, taginfo.fields.column)
     else
@@ -2102,7 +2102,7 @@ function! s:ShowInPreviewWin() abort
 
     call s:goto_win('P', 1)
     normal! zv
-    normal! zz
+    normal! zt
     call s:goto_markedwin(1)
     call s:goto_tagbar(1)
     call cursor(pos[1], pos[2])
